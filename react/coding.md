@@ -8,6 +8,9 @@
     - Use `type` for unions, intersections, and primitives.
 
 ## Architecture & Patterns
+- **Boundary Validation (Fail-Fast):**
+    - Use Zod or Yup for schema validation on all API responses and form inputs.
+    - Ensure TypeScript types match the runtime validation schemas.
 - **Configuration First:**
     - **No Magic Values:** Do not hardcode URLs, timeouts, or magic numbers (e.g., `1000` for debounce) in components.
     - **Extraction:** Use `.env` files or a central `config/` or `constants/` directory.

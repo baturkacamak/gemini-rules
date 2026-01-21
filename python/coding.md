@@ -11,6 +11,9 @@
     - Constants: `UPPER_CASE`
 
 ## Architecture
+- **Boundary Validation (Fail-Fast):**
+    - Use `pydantic` or `dataclasses` with type-checking for all incoming data.
+    - Validate all API/CLI inputs immediately; do not pass raw dicts into the core logic.
 - **Configuration First:**
     - **No Magic Values:** Do not hardcode numbers, timeouts, or paths deep in logic.
     - **Extraction:** Move them to `config.py`, `settings.py`, or class-level `CONSTANTS`.

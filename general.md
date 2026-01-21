@@ -26,3 +26,7 @@ These rules apply to all projects, regardless of language.
 - **No Dead Code:** You MUST remove unused imports, commented-out logic, and "zombie" functions before finishing.
 - **No Debug Prints:** Remove all `print()`, `console.log()`, or `var_dump()` statements. Use the Logger if persistent output is needed.
 - **Cleanup:** If you modify a file, you own its cleanliness. Fix existing lint warnings near your changes.
+
+## Engineering Excellence
+- **Refactor over Patch:** Do not add complexity to an already complex function. If a change makes a function too long or hard to read, you MUST refactor it into smaller, cohesive units before or during the implementation.
+- **Fail-Fast:** Detect errors at the earliest possible point. Validate inputs at the boundary (API, CLI, UI) before passing them to the core logic.

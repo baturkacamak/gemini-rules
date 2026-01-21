@@ -7,6 +7,9 @@
     - `public function getTotal(float $price): float`
 
 ## Architecture (Laravel/General)
+- **Boundary Validation (Fail-Fast):**
+    - Use Form Requests or DTOs to validate all incoming request data.
+    - Logic classes should only receive validated, typed objects, never raw arrays.
 - **Configuration First:**
     - **No Magic Values:** Hardcoded strings/ints are forbidden in logic.
     - **Solution:** Use Laravel's `config()` files or class `const`.
