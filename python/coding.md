@@ -25,7 +25,11 @@
     - **Avoid:** Static methods (`@staticmethod`) for logic that requires dependencies. Use instance methods or pure functions.
 - **Dependency Injection:** Prefer passing dependencies explicitly over global state or side-channel imports.
 - **Composition:** Prefer composition over deep inheritance hierarchies.
-- **Error Handling:** Use custom exceptions for domain-specific errors. Catch specific exceptions, never bare `except:`.
+- **Error Handling (No Silent Failures):**
+    - **Custom Exceptions:** Use domain-specific exceptions (e.g., `OrderProcessingError`) instead of generic `Exception`.
+    - **No Swallowing:** Never use bare `except:` or `except Exception: pass`. Every catch MUST be handled (logged, retried, or re-raised).
+    - **Context:** Exceptions must be raised with relevant state (e.g., `raise UserError("Invalid age", user_id=123)`).
+    - **Traceability:** Always use `raise NewException(...) from original_err` to preserve stack traces.
 
 ## Testing Patterns
 - **TDD Protocol (Mandatory):**

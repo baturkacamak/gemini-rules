@@ -8,6 +8,11 @@
     - Use `type` for unions, intersections, and primitives.
 
 ## Architecture & Patterns
+- **Error Handling (Resilient):**
+    - **Boundaries:** Use React Error Boundaries to catch UI crashes.
+    - **Async:** Always use `try/catch` or `.catch()` for API calls; never assume a successful response.
+    - **User Feedback:** All errors must trigger a user-facing notification (Toast, Alert) or a fallback state.
+    - **Strict Typing:** Define error types/interfaces for API error responses.
 - **Boundary Validation (Fail-Fast):**
     - Use Zod or Yup for schema validation on all API responses and form inputs.
     - Ensure TypeScript types match the runtime validation schemas.

@@ -7,6 +7,11 @@
     - `public function getTotal(float $price): float`
 
 ## Architecture (Laravel/General)
+- **Error Handling (Robust):**
+    - **Custom Exceptions:** Create specific exception classes for domain failures.
+    - **No Swallowing:** Never use empty `catch` blocks.
+    - **Report/Render:** Use Laravel's `report()` helper for logging and custom `render()` methods for API error responses.
+    - **Context:** Pass context to exceptions using properties or constructor arguments.
 - **Boundary Validation (Fail-Fast):**
     - Use Form Requests or DTOs to validate all incoming request data.
     - Logic classes should only receive validated, typed objects, never raw arrays.
