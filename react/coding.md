@@ -8,6 +8,9 @@
     - Use `type` for unions, intersections, and primitives.
 
 ## Architecture & Patterns
+- **Configuration First:**
+    - **No Magic Values:** Do not hardcode URLs, timeouts, or magic numbers (e.g., `1000` for debounce) in components.
+    - **Extraction:** Use `.env` files or a central `config/` or `constants/` directory.
 - **Interfaces for Dependencies:**
     - API clients and Services should be defined by `interface` to allow mocking in tests.
     - Example: `useAuth(service: AuthProvider)` where `AuthProvider` is an interface.

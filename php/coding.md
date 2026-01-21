@@ -7,6 +7,9 @@
     - `public function getTotal(float $price): float`
 
 ## Architecture (Laravel/General)
+- **Configuration First:**
+    - **No Magic Values:** Hardcoded strings/ints are forbidden in logic.
+    - **Solution:** Use Laravel's `config()` files or class `const`.
 - **Interfaces First:**
     - **Rule:** Type-hint Interfaces, NOT concrete classes.
     - **Example:** `function __construct(UserRepositoryInterface $users)` NOT `(UserRepository $users)`.

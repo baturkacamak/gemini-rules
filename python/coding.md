@@ -11,6 +11,9 @@
     - Constants: `UPPER_CASE`
 
 ## Architecture
+- **Configuration First:**
+    - **No Magic Values:** Do not hardcode numbers, timeouts, or paths deep in logic.
+    - **Extraction:** Move them to `config.py`, `settings.py`, or class-level `CONSTANTS`.
 - **Interfaces First:**
     - **Boundaries:** All external dependencies (DB, APIs, storage) MUST be typed as `Protocol` or `ABC` (Abstract Base Class).
     - **Usage:** Logic should depend on `RepositoryInterface`, never `SqlAlchemyRepository`.
