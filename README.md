@@ -34,6 +34,25 @@ This repository serves as the "Single Source of Truth" for coding standards, inf
 3.  **Start Chatting:**
     Gemini will now adhere to these strict standards for every line of code it writes.
 
+## 💡 Pro Tip: Instant Initialization
+
+Don't type "Read GEMINI.md" every time. Create a shortcut to start your session with context instantly.
+
+### Linux / macOS (Bash/Zsh)
+Add this alias to your `.bashrc` or `.zshrc`:
+```bash
+alias gstart='gemini "Read GEMINI.md and establish the project context."'
+```
+
+### Windows (PowerShell)
+Add this function to your `$PROFILE`:
+```powershell
+function gstart { gemini "Read GEMINI.md and establish the project context." }
+```
+
+**Usage:**
+Just type `gstart` when you open your project.
+
 ## 📂 Structure
 
 *   `general.md`: Universal rules (Git, Tone, Safety).

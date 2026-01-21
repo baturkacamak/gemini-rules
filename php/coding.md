@@ -7,11 +7,24 @@
     - `public function getTotal(float $price): float`
 
 ## Architecture (Laravel/General)
+- **Interfaces First:**
+    - **Rule:** Type-hint Interfaces, NOT concrete classes.
+    - **Example:** `function __construct(UserRepositoryInterface $users)` NOT `(UserRepository $users)`.
+    - **Boundaries:** Services, Repositories, and External integrations MUST have a corresponding Interface.
+- **No Static Cling:**
+    - **Forbidden:** Singletons and static method calls for business logic (`Class::method()`).
+    - **Preferred:** Constructor Injection for all dependencies.
+    - **Facades:** Avoid Facades in domain logic; use the underlying Contract/Interface instead.
 - **SOLID:** Adhere strictly to SOLID principles.
 - **Thin Controllers:** Move business logic to Services, Actions, or Jobs. Controllers should only handle request/response.
 - **Eloquent:** Use Relationships, Scopes, and Accessors. Avoid raw SQL.
 - **DTOs:** Use Data Transfer Objects for passing complex data between layers.
 
 ## Testing Patterns
+- **TDD Protocol (Mandatory):**
+    1.  **Red:** Write the failing PEST/PHPUnit test FIRST.
+    2.  **Green:** Write the minimal code to pass the test.
+    3.  **Refactor:** Clean up.
 - **Framework:** `Pest PHP` (preferred) or `PHPUnit`.
 - **Strategy:** Write feature tests for endpoints and unit tests for complex logic/services.
+- **Coverage:** Zero-Code without tests policy.
