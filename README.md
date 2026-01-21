@@ -18,10 +18,16 @@ This repository serves as the "Single Source of Truth" for coding standards, inf
 
 ## 📦 How to Use
 
-1.  **Copy the Template:**
-    Copy `GEMINI_TEMPLATE.md` to your project root and rename it to `GEMINI.md` (or `.gemini/rules.md`).
+1.  **Install the Rules:**
+    Add this repository as a submodule to keep your standards in sync:
+    ```bash
+    git submodule add git@github.com:baturkacamak/gemini-rules.git gemini-rules
+    ```
 
-2.  **Select Your Modules:**
+2.  **Copy the Template:**
+    Copy `gemini-rules/GEMINI_TEMPLATE.md` to your project root and rename it to `GEMINI.md` (or `.gemini/rules.md`).
+
+3.  **Select Your Modules:**
     Uncomment the lines relevant to your stack:
 
     ```markdown
@@ -31,7 +37,7 @@ This repository serves as the "Single Source of Truth" for coding standards, inf
     @gemini-rules/python/infrastructure.md
     ```
 
-3.  **Start Chatting:**
+4.  **Start Chatting:**
     Gemini will now adhere to these strict standards for every line of code it writes.
 
 ## 💡 Pro Tip: Instant Initialization
@@ -41,13 +47,13 @@ Don't type "Read GEMINI.md" every time. Create a shortcut to start your session 
 ### Linux / macOS (Bash/Zsh)
 Add this alias to your `.bashrc` or `.zshrc`:
 ```bash
-alias gstart='gemini "Read GEMINI.md and establish the project context."'
+alias gstart='gemini --prompt-interactive "Read GEMINI.md and establish the project context."'
 ```
 
 ### Windows (PowerShell)
 Add this function to your `$PROFILE`:
 ```powershell
-function gstart { gemini "Read GEMINI.md and establish the project context." }
+function gstart { gemini --prompt-interactive "Read GEMINI.md and establish the project context." }
 ```
 
 **Usage:**
